@@ -1,15 +1,19 @@
 import React from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { Container, IconWrapper, ItemWrapper } from "./style";
+import { BtnWrap, Container, IconWrapper, ItemWrapper } from "./style";
 import logo from "../../assets/img/logo.png";
 import { NavbarItems } from "../../utils/navbarItems";
 import { BsSearch } from "react-icons/bs";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { GiExitDoor } from "react-icons/gi";
 import Button from "../../Generic/Button";
+import Nav from "../Hamburger";
+import { useState } from "react";
 
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const [cartOpen, setCartOpen] = useState(false);
 
   const active = ({ isActive }) => {
     return {
@@ -18,6 +22,13 @@ const Navbar = () => {
       paddingBottom: isActive ? "26px" : "0px",
       transition: "0.5s",
     };
+  };
+
+  console.log(cartOpen);
+
+  const onCart = () => {
+    navigate("/cart");
+    setCartOpen(!cartOpen);
   };
   return (
     <>
@@ -38,10 +49,16 @@ const Navbar = () => {
         </ItemWrapper>
         <IconWrapper>
           <BsSearch className="icon" />
-          <RiShoppingCart2Line className="icon" />
-          <Button width="100px">
-            <GiExitDoor style={{ marginRight: "8px" }} /> Login
-          </Button>
+          <RiShoppingCart2Line
+            className={`icon ${cartOpen && "cart-open"}`}
+            onClick={onCart}
+          />
+          <BtnWrap>
+            <Button onClick={() => navigate("/login")} width="100px">
+              <GiExitDoor style={{ marginRight: "8px" }} /> Login
+            </Button>
+          </BtnWrap>
+          <Nav />
         </IconWrapper>
       </Container>
       <Outlet />

@@ -14,3 +14,17 @@
   --grayColor: #3d3d3d;
   --lightGray: #727272;
 }
+
+.link {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3d3d3d;
+}
+
+@media (max-width: 1000px) {
+  .link {
+    font-size: 12px;
+  }
+}

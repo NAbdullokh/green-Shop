@@ -15,12 +15,8 @@ export const ItemWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 50px;
-  .link {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 20px;
-    color: #3d3d3d;
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
 
@@ -32,5 +28,15 @@ export const IconWrapper = styled.div`
   gap: 30px;
   .icon {
     transform: scale(1.2);
+    color: black;
+  }
+  .cart-open {
+    color: red;
+  }
+`;
+
+export const BtnWrap = styled.div`
+  @media (max-width: 900px) {
+    display: none;
   }
 `;
