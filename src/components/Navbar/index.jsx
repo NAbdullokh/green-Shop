@@ -9,6 +9,7 @@ import { GiExitDoor } from "react-icons/gi";
 import Button from "../../Generic/Button";
 import Nav from "../Hamburger";
 import { useState } from "react";
+import NavbatInput from "./Input";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -23,8 +24,6 @@ const Navbar = () => {
       transition: "0.5s",
     };
   };
-
-  console.log(cartOpen);
 
   const onCart = () => {
     navigate("/cart");
@@ -48,7 +47,7 @@ const Navbar = () => {
           })}
         </ItemWrapper>
         <IconWrapper>
-          <BsSearch className="icon" />
+          <BsSearch className="icon search" />
           <RiShoppingCart2Line
             className={`icon ${cartOpen && "cart-open"}`}
             onClick={onCart}
@@ -61,6 +60,7 @@ const Navbar = () => {
           <Nav />
         </IconWrapper>
       </Container>
+      <NavbatInput />
       <Outlet />
     </>
   );

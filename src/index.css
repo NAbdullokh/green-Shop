@@ -10,7 +10,7 @@
 }
 
 :root {
-  --greencolor: #46a358;
+  --greenColor: #46a358;
   --grayColor: #3d3d3d;
   --lightGray: #727272;
 }
@@ -26,5 +26,15 @@
 @media (max-width: 1000px) {
   .link {
     font-size: 12px;
+  }
+}
+
+.ant-carousel .slick-dots li {
+  background: #46a358;
+}
+
+@media (max-width: 900px) {
+  .search {
+    display: none;
   }
 }

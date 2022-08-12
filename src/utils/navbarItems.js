@@ -1,4 +1,5 @@
 import GenericPage from "../Generic/GenericPage";
+import HomePage from "../pages/Home";
 
 export const NavbarItems = [
   {
@@ -6,7 +7,7 @@ export const NavbarItems = [
     hidden: false,
     title: "Home",
     path: "/home",
-    element: <GenericPage />,
+    element: <HomePage />,
   },
   {
     id: 2,
