@@ -4,6 +4,7 @@ import Button from "../../../Generic/Button";
 import { Box1, Box2, BtnWrapper, Container } from "./style";
 import img1 from "../../../assets/img/f2.png";
 import img2 from "../../../assets/img/f1.png";
+import { BsChevronRight } from "react-icons/bs";
 
 const Img = () => {
   const navigate = useNavigate();
@@ -25,10 +26,12 @@ const Img = () => {
         <BtnWrapper>
           <Button onClick={() => navigate("/shop")} width="140px" height="40px">
             SHOP NOW
+            <BsChevronRight style={{ marginLeft: "10px" }} />
           </Button>
         </BtnWrapper>
         <Box1.SecondBtn onClick={() => navigate("/shop")}>
           SHOP NOW
+          <BsChevronRight style={{ marginLeft: "10px" }} />
         </Box1.SecondBtn>
       </Box1>
       <Box2>

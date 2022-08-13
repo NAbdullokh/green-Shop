@@ -1,9 +1,12 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { NavbarItems } from "../../utils/navbarItems";
+import { GiExitDoor } from "react-icons/gi";
 
 import { Title, Ul } from "./style";
+import Button from "../../Generic/Button";
 export const RightNav = ({ open }) => {
+  const navigate = useNavigate();
   if (open) {
     document.body.style.overflow = "hidden";
   } else {
@@ -24,6 +27,9 @@ export const RightNav = ({ open }) => {
           )
         );
       })}
+      <Button mr="50" onClick={() => navigate("/login")} width="100px">
+        <GiExitDoor style={{ marginRight: "8px" }} /> Login
+      </Button>
     </Ul>
   );
 };
