@@ -9,8 +9,11 @@ const Footer = () => {
     <>
       <Outlet />
       <FirstFooter />
-      {/* <SecondFooter /> */}
-      {/* <ThirdFooter /> */}
+      <SecondFooter />
+      <ThirdFooter />
+      <p style={{ textAlign: "center", marginTop: "10px" }}>
+        © 2021 GreenShop. All Rights Reserved.
+      </p>
     </>
   );
 };

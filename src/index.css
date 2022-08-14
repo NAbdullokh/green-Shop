@@ -38,3 +38,7 @@
     display: none;
   }
 }
+
+.footerItem:hover {
+  color: #46a358;
+}
