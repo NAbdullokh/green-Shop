@@ -1,11 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import FirstFooter from "./First";
+import SecondFooter from "./Second";
+import ThirdFooter from "./Third";
 
 const Footer = () => {
   return (
     <>
       <Outlet />
-      <h1>Footer</h1>
+      <FirstFooter />
+      {/* <SecondFooter /> */}
+      {/* <ThirdFooter /> */}
     </>
   );
 };

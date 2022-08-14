@@ -16,7 +16,7 @@ const Post = () => {
       <CardWrapper>
         {postItems.map((value) => {
           return (
-            <Card>
+            <Card key={value.id}>
               <Card.Img src={value.img} />
               <TitleSection>
                 <TitleSection.Date>{value.date}</TitleSection.Date>

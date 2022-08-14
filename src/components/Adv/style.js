@@ -8,6 +8,7 @@ export const Container = styled.div`
   margin-top: 140px;
   @media (max-width: 1200px) {
     flex-direction: column;
+    gap: 55px;
   }
 `;
 
@@ -28,10 +29,15 @@ export const Boxes = styled.div`
 
 Boxes.Img = styled.img`
   width: 292px;
+  margin-top: -50px;
   @media (max-width: 640px) {
     width: 220px;
     height: 220px;
     margin-bottom: 10px;
+  }
+  @media (max-width: 450px) {
+    width: 150px;
+    height: 150px;
   }
 `;
 

@@ -31,6 +31,7 @@ export const CardWrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 35px;
+  gap: 128px;
 `;
 
 export const Card = styled.div`
@@ -38,7 +39,10 @@ export const Card = styled.div`
   background-color: #fbfbfb;
   display: flex;
   flex-direction: column;
-  margin: 40px;
+  /* margin: 48.5px; */
+  @media (max-width: 728px) {
+    width: 100%;
+  }
 `;
 Card.Img = styled.img``;
 
