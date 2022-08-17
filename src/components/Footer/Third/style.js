@@ -9,6 +9,7 @@ export const Container = styled.div`
   @media (max-width: 800px) {
     flex-direction: column;
     align-items: center;
+    padding: 20px 0px 20px 0px;
   }
 `;
 
