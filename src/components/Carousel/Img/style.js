@@ -16,9 +16,6 @@ export const Container = styled.div`
     height: 300px;
     background-color: #cce6d1;
   }
-  /* @media (max-width: 500px) {
-    height: 240px;
-  } */
 `;
 
 export const Box1 = styled.div`

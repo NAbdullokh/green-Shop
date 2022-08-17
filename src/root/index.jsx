@@ -12,7 +12,7 @@ const Root = () => {
       <Container>
         <Routes>
           <Route path="/" element={<Navigate to={"/home"} />} />
-          <Route element={<Navbar />}>
+          <Route element={<Navbar data={NavbarItems} />}>
             <Route element={<Footer />}>
               {NavbarItems.map((value) => {
                 return (

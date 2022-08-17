@@ -5,6 +5,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 138px;
+  @media (max-width: 900px) {
+    padding: 0 14px 0 14px;
+  }
 `;
 
 Container.Title = styled.p`
@@ -28,18 +31,22 @@ Container.Description = styled.p`
 export const CardWrapper = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 532px) {
+    justify-content: center;
+  }
   margin-top: 35px;
-  gap: 128px;
 `;
 
 export const Card = styled.div`
-  width: 268px;
+  max-width: 268px;
+  flex: 1 1 21rem;
   background-color: #fbfbfb;
   display: flex;
   flex-direction: column;
-  /* margin: 48.5px; */
+  margin: 8px;
   @media (max-width: 728px) {
     width: 100%;
   }

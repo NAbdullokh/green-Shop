@@ -1,17 +1,18 @@
 import React from "react";
 import Img from "./Img";
 import { Carousel } from "antd";
+import { Container } from "./style";
 
 const Slider = () => {
   return (
-    <div>
+    <Container>
       <Carousel dots>
         <Img />
         <Img />
         <Img />
         <Img />
       </Carousel>
-    </div>
+    </Container>
   );
 };
 

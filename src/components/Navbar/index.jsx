@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { BtnWrap, Container, IconWrapper, ItemWrapper } from "./style";
+import {
+  BtnWrap,
+  Container,
+  IconWrapper,
+  ItemWrapper,
+  Responsive,
+  Wrapper,
+} from "./style";
 import logo from "../../assets/img/logo.png";
-import { NavbarItems } from "../../utils/navbarItems";
 import { BsSearch } from "react-icons/bs";
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { GiExitDoor } from "react-icons/gi";
 import Button from "../../Generic/Button";
-import Nav from "../Hamburger";
 import { useState } from "react";
 import NavbatInput from "./Input";
+import { secondNavItems } from "../../utils/secondNavItems";
 
-const Navbar = () => {
+const Navbar = ({ data }) => {
   const navigate = useNavigate();
 
   const [cartOpen, setCartOpen] = useState(false);
+
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const changeNav = () => {
+    if (window.scrollY <= 500) setScrollNav(true);
+    else setScrollNav(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
+  }, []);
 
   const active = ({ isActive }) => {
     return {
@@ -22,6 +39,13 @@ const Navbar = () => {
       fontWeight: isActive ? "700" : "400",
       paddingBottom: isActive ? "26px" : "0px",
       transition: "0.5s",
+      color: isActive ? "#64A358" : "black",
+    };
+  };
+
+  const isactive = ({ isActive }) => {
+    return {
+      color: isActive ? "#64A358" : "black",
     };
   };
 
@@ -34,7 +58,7 @@ const Navbar = () => {
       <Container>
         <Container.Logo onClick={() => navigate("/home")} src={logo} />
         <ItemWrapper>
-          {NavbarItems.map((value) => {
+          {data.map((value) => {
             return (
               !value.hidden && (
                 <ItemWrapper.Items key={value.id}>
@@ -57,11 +81,22 @@ const Navbar = () => {
               <GiExitDoor style={{ marginRight: "8px" }} /> Login
             </Button>
           </BtnWrap>
-          <Nav />
         </IconWrapper>
       </Container>
       <NavbatInput />
       <Outlet />
+      <Responsive scrollNav={scrollNav}>
+        {secondNavItems.map((value) => {
+          return (
+            <NavLink key={value.id} style={isactive} to={value.path}>
+              <Wrapper>
+                {value.img}
+                {value.title}
+              </Wrapper>
+            </NavLink>
+          );
+        })}
+      </Responsive>
     </>
   );
 };

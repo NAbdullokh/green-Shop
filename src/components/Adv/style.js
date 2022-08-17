@@ -10,6 +10,9 @@ export const Container = styled.div`
     flex-direction: column;
     gap: 55px;
   }
+  @media (max-width: 900px) {
+    padding: 0 14px 0 14px;
+  }
 `;
 
 export const Boxes = styled.div`

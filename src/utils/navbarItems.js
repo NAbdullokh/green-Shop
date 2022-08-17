@@ -1,3 +1,4 @@
+import AllFlowers from "../components/AllFlowers";
 import GenericPage from "../Generic/GenericPage";
 import HomePage from "../pages/Home";
 
@@ -14,13 +15,13 @@ export const NavbarItems = [
     hidden: false,
     title: "Shop",
     path: "/shop",
-    element: <GenericPage />,
+    element: <AllFlowers />,
   },
   {
     id: 3,
     hidden: false,
-    title: "Plant Care",
-    path: "/plant",
+    title: "Favorites",
+    path: "/favorites",
     element: <GenericPage />,
   },
   {
@@ -42,6 +43,20 @@ export const NavbarItems = [
     hidden: true,
     title: "Login",
     path: "/login",
+    element: <GenericPage />,
+  },
+  {
+    id: 5,
+    hidden: true,
+    title: "Profile",
+    path: "/profile",
+    element: <GenericPage />,
+  },
+  {
+    id: 5,
+    hidden: true,
+    title: "Add",
+    path: "/add",
     element: <GenericPage />,
   },
 ];
