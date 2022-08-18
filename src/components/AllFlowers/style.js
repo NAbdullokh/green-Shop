@@ -2,7 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  margin-top: 80px;
+  margin-left: 45px;
+  @media (max-width: 900px) {
+    margin: 0;
+  }
 `;
 
 Container.Title = styled.div`
@@ -16,12 +19,8 @@ Container.Title = styled.div`
 
 export const Body = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  background-color: red;
-  @media (max-width: 532px) {
-    justify-content: center;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  grid-gap: 1rem;
+  align-items: start;
 `;

@@ -6,7 +6,7 @@ import { Body, Container } from "./style";
 const AllFlowers = () => {
   return (
     <Container>
-      <Container.Title>Propertes</Container.Title>
+      {/* <Container.Title>Propertes</Container.Title> */}
       <Body>
         {card.map((value) => {
           return <Card key={value.id} data={value} />;
