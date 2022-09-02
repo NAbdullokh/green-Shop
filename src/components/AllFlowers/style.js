@@ -20,7 +20,7 @@ Container.Title = styled.div`
 export const Body = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(308px, 1fr));
   grid-gap: 1rem;
   align-items: start;
 `;

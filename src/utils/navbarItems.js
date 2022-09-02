@@ -1,4 +1,5 @@
 import AllFlowers from "../components/AllFlowers";
+import Login from "../components/Login";
 import GenericPage from "../Generic/GenericPage";
 import HomePage from "../pages/Home";
 
@@ -43,7 +44,7 @@ export const NavbarItems = [
     hidden: true,
     title: "Login",
     path: "/login",
-    element: <GenericPage />,
+    element: <Login />,
   },
   {
     id: 5,

@@ -7,6 +7,11 @@ const getType = (type) => {
         color: "#46A358",
         border: " 1px solid #46A358",
       };
+    case "social":
+      return {
+        border: " 1px solid #EAEAEA",
+        color: "#727272",
+      };
     default:
       return {
         background: " #46A358",

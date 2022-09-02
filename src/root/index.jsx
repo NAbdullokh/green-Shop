@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Details from "../components/Details";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import NotFound from "../pages/NotFound";
@@ -24,6 +25,7 @@ const Root = () => {
                 );
               })}
               <Route path="*" element={<NotFound />} />
+              <Route path="/shop/:id" element={<Details />} />
             </Route>
           </Route>
         </Routes>

@@ -42,3 +42,17 @@
 .footerItem:hover {
   color: #46a358;
 }
+
+.line {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin-top: 45px;
+}
+
+.lines {
+  width: 1px;
+  height: 12vh;
+  background-color: black;
+  transform: rotate(90deg);
+}
