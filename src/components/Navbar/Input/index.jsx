@@ -1,7 +1,7 @@
 import React from "react";
-import { Button, Container, InputWrapper } from "./style";
+import { Container, InputWrapper } from "./style";
 import { BsSearch } from "react-icons/bs";
-import filter from "../../../assets/icon/filter.svg";
+import Nav from "../../Hamburger";
 
 const NavbatInput = () => {
   return (
@@ -10,9 +10,7 @@ const NavbatInput = () => {
         <BsSearch className="search-icon" />
         <InputWrapper.Input type="text" placeholder="Find your plants" />
       </InputWrapper>
-      <Button>
-        <img src={filter} alt="" />
-      </Button>
+      <Nav />
     </Container>
   );
 };

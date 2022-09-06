@@ -20,6 +20,10 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   box-shadow: 0px 0px 10px whitesmoke;
+  @media (max-width: 600px) {
+    /* width: 90%; */
+    box-shadow: none;
+  }
 `;
 
 Container.Title = styled.p`
@@ -39,7 +43,7 @@ Container.Desc = styled.p`
 `;
 
 export const Input = styled.input`
-  width: 70%;
+  width: 100%;
   height: 40px;
   outline: none;
   border: 1px solid #eaeaea;
@@ -54,6 +58,9 @@ export const Input = styled.input`
   :focus {
     border: 1px solid #46a358;
   }
+  @media (max-width: 580px) {
+    width: 100%;
+  }
 `;
 
 Container.Forgot = styled.p`
@@ -67,4 +74,14 @@ Container.Forgot = styled.p`
 
 export const Icon = styled.img`
   margin-right: 10px;
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  @media (max-width: 580px) {
+    width: 90%;
+  }
 `;

@@ -88,24 +88,21 @@ export const StyledBurger = styled.div`
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
+`;
 
-  div {
-    width: 2rem;
-    height: 0.25rem;
-    background-color: ${({ open }) => (open ? "#ccc" : "#333")};
-    border-radius: 10px;
-    transform-origin: 1px;
-    transition: all 0.3s linear;
-
-    &:nth-child(1) {
-      transform: ${({ open }) => (open ? "rotate(45deg)" : "rotate(0)")};
-    }
-    &:nth-child(2) {
-      transform: ${({ open }) => (open ? "translateX(100%)" : "translateX(0)")};
-      opacity: ${({ open }) => (open ? 0 : 1)};
-    }
-    &:nth-child(3) {
-      transform: ${({ open }) => (open ? "rotate(-45deg)" : "rotate(0)")};
-    }
-  }
+export const Button = styled.div`
+  margin-top: 10px;
+  min-width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0 10px 0;
+  background: linear-gradient(
+    137.05deg,
+    rgba(70, 163, 88, 0.45) -24.6%,
+    #46a358 100%
+  );
+  box-shadow: 0px 10px 20px rgba(70, 163, 88, 0.3);
+  border-radius: 14px;
 `;
