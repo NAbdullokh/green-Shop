@@ -20,14 +20,19 @@ export const Ul = styled.ul`
     flex-direction: column;
     background-color: white;
     position: fixed;
-    transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
+    transform: ${({ open }) =>
+      open ? "translateX(100%)" : "translateX(200%)"};
     z-index: 999;
-    top: 4.9rem;
+    top: 3.9rem;
     left: 0;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 50%;
     padding-top: 2rem;
     transition: transform 0.3s ease-in-out;
+    @media (max-height: 785px) {
+      overflow-y: auto;
+      height: 120vh;
+    }
 
     li {
       padding: 10px 28px;
@@ -91,7 +96,6 @@ export const StyledBurger = styled.div`
 `;
 
 export const Button = styled.div`
-  margin-top: 10px;
   min-width: 45px;
   height: 45px;
   display: flex;

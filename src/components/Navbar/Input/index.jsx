@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, InputWrapper } from "./style";
 import { BsSearch } from "react-icons/bs";
-import Nav from "../../Hamburger";
+import Nav from "../../Hamburger/index";
 
 const NavbatInput = () => {
   return (

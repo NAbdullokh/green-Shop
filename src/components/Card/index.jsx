@@ -3,17 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { Body, Container, EachIcon, IconWrap } from "./style";
 
 const Card = ({ data }) => {
-  console.log(data);
+  console.log(data.images.image);
   const navigate = useNavigate();
   return (
-    <Container>
+    <Container onClick={() => navigate(`/shop/${data.id}`)}>
       <Container.Img
-        onClick={() => navigate(`/shop/${data.id}`)}
-        src={data.img}
+        src={`http://futurecommunication.pythonanywhere.com${data.images.image}`}
       />
       <Body>
         <Body.Title>{data.title}</Body.Title>
-        <Body.Price>{data.price}</Body.Price>
+        <Body.Price>$ {data.price}.00</Body.Price>
         <IconWrap>
           <EachIcon>
             <IconWrap.Cart />
