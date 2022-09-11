@@ -8,7 +8,7 @@ const Card = ({ data }) => {
   return (
     <Container onClick={() => navigate(`/shop/${data.id}`)}>
       <Container.Img
-        src={`http://futurecommunication.pythonanywhere.com${data.images.image}`}
+        src={`https://futurecommunication.pythonanywhere.com${data.images.image}`}
       />
       <Body>
         <Body.Title>{data.title}</Body.Title>

@@ -11,7 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onClick = () => {
-    fetch("http://futurecommunication.pythonanywhere.com/api/v1/user/login/", {
+    fetch("https://futurecommunication.pythonanywhere.com/api/v1/user/login/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

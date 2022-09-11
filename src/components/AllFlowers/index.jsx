@@ -6,7 +6,7 @@ import { Body, Container } from "./style";
 const AllFlowers = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://futurecommunication.pythonanywhere.com/api/v1/product/")
+    fetch("https://futurecommunication.pythonanywhere.com/api/v1/product/")
       .then((res) => res.json())
       .then((res) => setData(res.results));
   }, []);
