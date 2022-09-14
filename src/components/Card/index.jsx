@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { Body, Container, EachIcon, IconWrap } from "./style";
 
 const Card = ({ data }) => {
-  console.log(data.images.image);
   const navigate = useNavigate();
   return (
     <Container onClick={() => navigate(`/shop/${data.id}`)}>
