@@ -10,21 +10,21 @@ import Loader from "../../../Loader/Loader.jsx";
 const NavbatInput = () => {
   const [text, setText] = useState("");
 
-  useEffect(() => {
-    AllFetchingData();
-  }, []);
+  // useEffect(() => {
+  //   AllFetchingData();
+  // }, []);
 
-  const getSearch = async () => {
-    if (text !== "") {
-      await axios
-        .get(
-          `https://futurecommunication.pythonanywhere.com/api/v1/product/?search=${text}`
-        )
-        .then((res) => setData(res?.data?.results));
-    } else {
-      AllFetchingData();
-    }
-  };
+  // const getSearch = async () => {
+  //   if (text !== "") {
+  //     await axios
+  //       .get(
+  //         `https://futurecommunication.pythonanywhere.com/api/v1/product/?search=${text}`
+  //       )
+  //       .then((res) => setData(res?.data?.results));
+  //   } else {
+  //     AllFetchingData();
+  //   }
+  // };
 
   return (
     <Container>
@@ -36,7 +36,7 @@ const NavbatInput = () => {
           placeholder="Find your plants"
         />
       </InputWrapper>
-      <button onClick={getSearch}>Search</button>
+      {/* <button onClick={getSearch}>Search</button> */}
       <Nav />
     </Container>
   );
