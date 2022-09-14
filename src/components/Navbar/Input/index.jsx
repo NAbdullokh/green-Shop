@@ -2,35 +2,30 @@ import React, { useEffect, useState } from "react";
 import { Container, InputWrapper } from "./style";
 import { BsSearch } from "react-icons/bs";
 import Nav from "../../Hamburger/index";
-import { useQuery } from "react-query";
 import useSearch from "../../../hooks/useSearch";
-import UseReplace from "../../../hooks/useReplace";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import Loader from "../../../Loader/Loader.jsx";
 
 const NavbatInput = () => {
-  const [box, setBox] = useState([]);
-  const [text, setText] = useState();
+  const [text, setText] = useState("");
 
   useEffect(() => {
-    fetch(`https://futurecommunication.pythonanywhere.com/api/v1/product`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    }).then((res) => res.json());
+    AllFetchingData();
   }, []);
 
-  const onChange = () => {
-    if (text === "") {
-      fetch(
-        `https://futurecommunication.pythonanywhere.com/api/v1/product/${text}`
-      )
-        .then((res) => res.json())
-        .then((res) => setBox(res));
+  const getSearch = async () => {
+    if (text !== "") {
+      await axios
+        .get(
+          `https://futurecommunication.pythonanywhere.com/api/v1/product/?search=${text}`
+        )
+        .then((res) => setData(res?.data?.results));
+    } else {
+      AllFetchingData();
     }
   };
 
-  console.log(box, "data");
   return (
     <Container>
       <InputWrapper>
@@ -41,7 +36,7 @@ const NavbatInput = () => {
           placeholder="Find your plants"
         />
       </InputWrapper>
-      <button onClick={onChange}>search</button>
+      <button onClick={getSearch}>Search</button>
       <Nav />
     </Container>
   );

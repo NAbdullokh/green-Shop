@@ -3,18 +3,17 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import Root from "./root";
-import { QueryClient, QueryClientProvider } from "react-query";
 import "antd/dist/antd.css";
+import Context from "./context/context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const queryclient = new QueryClient();
 
 root.render(
   <React.StrictMode>
-    <QueryClientProvider client={queryclient}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Context>
         <Root />
-      </BrowserRouter>
-    </QueryClientProvider>
+      </Context>
+    </BrowserRouter>
   </React.StrictMode>
 );
