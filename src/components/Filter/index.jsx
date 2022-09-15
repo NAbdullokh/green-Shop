@@ -24,7 +24,7 @@ const Filter = () => {
         <TitlesWrap>
           {sidebarItem.map((value) => {
             return (
-              <Wrapper>
+              <Wrapper key={value.id}>
                 <Container.Titles>{value.title}</Container.Titles>
                 <Container.Num>(22)</Container.Num>
               </Wrapper>

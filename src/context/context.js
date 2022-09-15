@@ -15,8 +15,8 @@ export const Context = ({ children }) => {
         if (res?.status == 200) {
           setLoading(false);
         }
-        setData(res?.data?.results);
-        setCurrent(res?.data?.results);
+        setData(res?.data);
+        setCurrent(res?.data);
       });
   }, []);
 
@@ -26,11 +26,12 @@ export const Context = ({ children }) => {
         .get(
           `https://futurecommunication.pythonanywhere.com/api/v1/product/?search=${e}`
         )
-        .then((res) => setData(res?.data?.results));
+        .then((res) => setData(res?.data));
     } else return setData(current);
   };
 
-  console.log(data);
+  console.log(data, "data");
+
   return (
     <BackData.Provider
       value={{ data, setData, loading, setLoading, getSearch }}

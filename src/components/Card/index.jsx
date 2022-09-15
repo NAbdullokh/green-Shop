@@ -4,7 +4,6 @@ import { Body, Container, EachIcon, IconWrap } from "./style";
 
 const Card = ({ value }) => {
   const navigate = useNavigate();
-  console.log(value);
   return (
     <Container onClick={() => navigate(`/shop/${value.id}`)}>
       <Container.Img
