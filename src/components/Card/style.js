@@ -16,12 +16,13 @@ export const EachIcon = styled.div`
 export const Container = styled.div`
   width: 308px;
   /* max-width: 258px; */
-  padding: 31px 0px 0px 4px;
+  padding: 31px 0px 0px 0px;
   padding-left: 4px;
   display: flex;
   margin: auto;
   background-color: #fbfbfb;
   flex-direction: column;
+
   :hover {
     border-top: 1px solid var(--greenColor);
     transition: 0.3s;
@@ -40,6 +41,7 @@ export const Container = styled.div`
 
 Container.Img = styled.img`
   width: 100%;
+  height: 300px;
   margin-bottom: 10px;
 `;
 
@@ -72,7 +74,7 @@ export const IconWrap = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: -30px;
+  top: -50px;
 `;
 
 IconWrap.Cart = styled(RiShoppingCart2Line)`
