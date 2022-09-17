@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../../../Generic/Button";
 import { footerData } from "../../../mock/footerData";
 import { Boxes, Container, InputBox, InputWrapper } from "./style";
 
 const FirstFooter = () => {
+  const [email, setEmail] = useState("");
+  const onSend = () => {
+    fetch("http://futurecommunication.pythonanywhere.com/api/v1/user-join/", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+      }),
+    }).then((res) => res.json());
+    alert("Joined");
+  };
   return (
     <Container>
       {footerData.map((value) => {
@@ -21,8 +35,9 @@ const FirstFooter = () => {
           <InputWrapper.Input
             type="email"
             placeholder="enter your email address..."
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <Button width="85px" height="40px" ml="-20">
+          <Button onClick={onSend} width="85px" height="40px" ml="-20">
             Join
           </Button>
         </InputWrapper>

@@ -15,7 +15,7 @@
   margin: 0 10px;
   border-radius: 6px;
   cursor: pointer;
-  color: #eee;
+  color: #46a358;
   border-color: #eee;
   border: none;
   display: flex;
@@ -27,4 +27,5 @@
   font-weight: 900;
   background: #46a358;
   border-radius: 4px;
+  color: white;
 }
