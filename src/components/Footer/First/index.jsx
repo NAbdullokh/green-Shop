@@ -15,7 +15,13 @@ const FirstFooter = () => {
       body: JSON.stringify({
         email: email,
       }),
-    }).then((res) => res.json());
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res?.status == 400) {
+          alert("This email already joined");
+        }
+      });
     alert("Joined");
   };
   return (
